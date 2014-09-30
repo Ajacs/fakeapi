@@ -8,11 +8,12 @@
  * Service in the fakeApiApp.
  */
 angular.module('fakeApiApp')
-    .factory('PhotoService', function Photo($http) {
+    .factory('PhotoService', function Photo($http,$cacheFactory) {
 
 
         return {
             getAll: function () {
+
                 var promise = $http({
                     method: 'GET', url: 'http://jsonplaceholder.typicode.com/photos'
                 });
@@ -24,6 +25,7 @@ angular.module('fakeApiApp')
                     method: 'PUT',
                     url: 'http://jsonplaceholder.typicode.com/photos'
                 })
+
             }
 
 
