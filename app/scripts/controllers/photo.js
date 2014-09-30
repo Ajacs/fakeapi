@@ -8,10 +8,26 @@
  * Controller of the fakeApiApp
  */
 angular.module('fakeApiApp')
-  .controller('PhotoCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+    .controller('PhotoCtrl', function ($scope, PhotoService) {
+
+        PhotoService.getAll().then(
+            function (response) {
+                $scope.photos = response.data;
+            },
+            function (response) {
+                console.log('fail... lol');
+            }
+        )
+
+
+        $scope.addPhoto = function () {
+            window.alert('Add new photo');
+        }
+
+
+        $scope.deletePhoto = function () {
+            window.alert('Delete photo');
+        }
+
+
+    });

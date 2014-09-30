@@ -1,0 +1,25 @@
+<div class="container well">
+    <div class="col-lg-12">
+        <button ng-click="addPhoto()" class="btn btn-primary btn-sm pull-right">Agregar</button>
+        &nbsp;&nbsp;
+        <button ng-click="deletePhoto()" class="btn btn-danger btn-sm pull-right">Eliminar</button>
+    </div>
+    <h3>Take a look to the last photos uploaded by our users</h3>
+
+    <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="photo in photos">
+            <div class="thumbnail">
+                <img class="img-circle" ng-src="{{photo.url}}" alt=""/>
+
+                <div class="caption">
+                    <h3>Thumbnail label</h3>
+
+                    <p></p>
+
+                    <p><a href="" class="btn btn-primary" role="button">Button</a><a href="" class="btn btn-default"
+                                                                                     role="button">Button</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
