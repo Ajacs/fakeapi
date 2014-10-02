@@ -15,7 +15,11 @@ angular.module('fakeApiApp')
             getAll: function () {
 
                 var promise = $http({
-                    method: 'GET', url: 'http://jsonplaceholder.typicode.com/photos'
+                    method: 'GET',
+                    url: 'http://jsonplaceholder.typicode.com/photos',
+                    params: {
+                        albumId: 1
+                    }
                 });
                 return promise;
             },
